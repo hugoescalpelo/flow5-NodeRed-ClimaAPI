@@ -12,7 +12,7 @@
         "type": "mqtt in",
         "z": "653d7c2bdf79fa8e",
         "name": "",
-        "topic": "codigoIoT/Mor/mqtt/flow4",
+        "topic": "codigoIoT/flow5/mqtt",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "9c0ed33ac6aef07c",
@@ -20,7 +20,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
+        "x": 150,
         "y": 80,
         "wires": [
             [
@@ -191,7 +191,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "https://api.openweathermap.org/data/2.5/weather?lat=19.432188&lon=-99.133382&appid=fe401d1af6d12fa5ab2b9977c7c85776&units=metric",
+        "url": "https://api.openweathermap.org/data/2.5/weather?lat=19.432188&lon=-99.133382&appid={API Key}&units=metric",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -199,8 +199,9 @@
         "authType": "",
         "senderr": false,
         "headers": [],
+        "credentials": {},
         "x": 410,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "8c70f3de0e3669f1"
@@ -229,7 +230,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "eeca95d11b4719a9"
@@ -245,7 +246,7 @@
         "action": "obj",
         "pretty": false,
         "x": 630,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "ebaf56025363ec50",
@@ -265,7 +266,7 @@
         "finalize": "",
         "libs": [],
         "x": 870,
-        "y": 340,
+        "y": 300,
         "wires": [
             [
                 "f9969cfcc4474f43",
@@ -285,7 +286,7 @@
         "finalize": "",
         "libs": [],
         "x": 870,
-        "y": 400,
+        "y": 360,
         "wires": [
             [
                 "c28801eab204ed33",
@@ -317,7 +318,7 @@
         "seg2": "26",
         "className": "",
         "x": 1150,
-        "y": 340,
+        "y": 300,
         "wires": []
     },
     {
@@ -344,7 +345,7 @@
         "seg2": "",
         "className": "",
         "x": 1170,
-        "y": 400,
+        "y": 360,
         "wires": []
     },
     {
@@ -386,7 +387,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 1140,
-        "y": 460,
+        "y": 420,
         "wires": [
             []
         ]
@@ -408,7 +409,7 @@
         "name": "API",
         "info": "",
         "x": 110,
-        "y": 280,
+        "y": 260,
         "wires": []
     },
     {
@@ -416,14 +417,14 @@
         "type": "function",
         "z": "653d7c2bdf79fa8e",
         "name": "JSON publico",
-        "func": "msg.payload = '{\"id\":\"Hugo Vargas. Col Doctores, CDMX\",\"temp\":' + global.get(\"tempAPI\")+',\"hum\":' + global.get (\"humAPI\") +'}';\nreturn msg;",
+        "func": "msg.payload = '{\"id\":\"Nombre de usuario\",\"temp\":' + global.get(\"tempAPI\")+',\"hum\":' + global.get (\"humAPI\") +'}';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 420,
-        "y": 580,
+        "y": 540,
         "wires": [
             [
                 "c3b548d940df4ce2"
@@ -437,7 +438,7 @@
         "name": "Enviador",
         "info": "",
         "x": 120,
-        "y": 540,
+        "y": 500,
         "wires": []
     },
     {
@@ -462,7 +463,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 580,
+        "y": 540,
         "wires": [
             [
                 "eea0838c59ec03a6"
@@ -484,7 +485,7 @@
         "expiry": "",
         "broker": "f8e46ec8a6703627",
         "x": 700,
-        "y": 580,
+        "y": 540,
         "wires": []
     },
     {
@@ -494,7 +495,7 @@
         "name": "Escuchador",
         "info": "",
         "x": 130,
-        "y": 660,
+        "y": 620,
         "wires": []
     },
     {
@@ -511,7 +512,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 700,
+        "y": 660,
         "wires": [
             [
                 "e022832c8131ea05"
@@ -527,7 +528,7 @@
         "action": "",
         "pretty": false,
         "x": 650,
-        "y": 700,
+        "y": 660,
         "wires": [
             [
                 "eaf44802fca819aa",
@@ -547,7 +548,7 @@
         "finalize": "",
         "libs": [],
         "x": 910,
-        "y": 700,
+        "y": 660,
         "wires": [
             [
                 "07563d8efaca3636"
@@ -566,7 +567,7 @@
         "finalize": "",
         "libs": [],
         "x": 900,
-        "y": 760,
+        "y": 720,
         "wires": [
             [
                 "587ac478af9bedd8"
@@ -612,7 +613,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 1200,
-        "y": 700,
+        "y": 660,
         "wires": [
             []
         ]
@@ -656,7 +657,7 @@
         "useDifferentColor": false,
         "className": "",
         "x": 1190,
-        "y": 760,
+        "y": 720,
         "wires": [
             []
         ]
